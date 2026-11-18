@@ -1,0 +1,15 @@
+node_modules/
+dist/
+build/
+coverage/
+.local/
+.cache/
+.env
+.env.*
+!.env.example
+*.log
+*.dump
+*.sql.gz
+playwright-report/
+test-results/
+.DS_Store

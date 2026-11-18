@@ -1,0 +1,330 @@
+.access-main {
+  width: calc(100% - 9%);
+  max-width: 1124px;
+  margin: clamp(26px, 4.3vh, 48px) auto clamp(36px, 7vh, 85px);
+}
+.access-main > .breadcrumb {
+  margin: 0 0 19px 2px;
+}
+.access-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: white;
+  border: 1px solid #dcdbe1;
+  border-radius: 19px;
+  padding: 9px;
+  box-shadow: 0 4px 18px #25233705;
+  min-height: 510px;
+}
+.poster {
+  isolation: isolate;
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #d5c7ef;
+  background-image:
+    linear-gradient(#77628e13 1px, transparent 1px),
+    linear-gradient(90deg, #77628e13 1px, transparent 1px);
+  background-size: 33px 33px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 27px 31px 31px;
+  color: #292536;
+}
+.poster-art {
+  position: absolute;
+  z-index: -1;
+  inset: 8% -1% 19%;
+  mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 83%, transparent);
+}
+.poster-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 52%;
+}
+.poster-corners {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.series-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 9px;
+  letter-spacing: 0.11em;
+  border: 1px solid #74638a88;
+  background: #e7dcf8b8;
+  border-radius: 30px;
+  padding: 6px 10px;
+}
+.poster-copy {
+  position: relative;
+}
+.figure-index {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  gap: 8px;
+  color: #50415f;
+}
+.figure-index span {
+  width: 18px;
+  height: 1px;
+  background: #534564;
+}
+.poster-copy h2 {
+  font-weight: 650;
+  font-size: clamp(32px, 3.2vw, 49px);
+  letter-spacing: -0.065em;
+  line-height: 1.11;
+  margin: 12px 0 7px;
+}
+.poster-copy h2 span {
+  color: #7659aa;
+}
+.poster-copy p {
+  font-size: 14px;
+  color: #494052;
+}
+.print-ticks {
+  position: absolute;
+  bottom: 27px;
+  right: 23px;
+  font-size: 13px;
+  letter-spacing: -3px;
+  opacity: 0.52;
+}
+.access-form {
+  align-self: center;
+  width: 100%;
+  max-width: 514px;
+  justify-self: center;
+  padding: 44px clamp(28px, 4.1vw, 62px);
+}
+.access-form h1 {
+  font-size: clamp(37px, 3.6vw, 53px);
+  line-height: 1.08;
+  margin: 14px 0 9px;
+}
+.access-form .intro {
+  font-size: 15px;
+  color: var(--muted);
+}
+.intro strong {
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.access-form form {
+  display: grid;
+  gap: 18px;
+  margin-top: 28px;
+}
+.access-form .button {
+  min-height: 47px;
+  margin-top: 3px;
+  gap: 10px;
+}
+.secure-caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: #72707e;
+  font-size: 12px;
+  margin-top: 20px;
+}
+.secure-caption svg {
+  color: #87828f;
+}
+.access-note {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  border-radius: 13px;
+  border: 1px solid var(--border);
+  background: #fff;
+  margin-top: 18px;
+}
+.note-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  background: #f6eada;
+  color: #785531;
+  border: 1px solid #ecdfcb;
+  border-radius: 10px;
+}
+.access-note h3 {
+  font:
+    650 15px/1.4 'DM Sans',
+    sans-serif;
+}
+.access-note p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.access-note .text-button {
+  margin-left: auto;
+  white-space: nowrap;
+}
+.activation .access-form {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.activation .access-form form {
+  gap: 14px;
+  margin-top: 20px;
+}
+@media (min-width: 1500px) {
+  .access-main {
+    margin-top: 6vh;
+  }
+  .access-card {
+    min-height: 545px;
+  }
+}
+@media (max-width: 900px) and (min-width: 701px) {
+  .access-main {
+    width: calc(100% - 48px);
+  }
+  .access-card {
+    grid-template-columns: 0.86fr 1fr;
+  }
+  .poster {
+    padding: 23px;
+  }
+  .access-form {
+    padding: 30px 21px;
+  }
+  .poster-art {
+    inset: 12% -11% 26%;
+  }
+  .poster-copy h2 {
+    font-size: 34px;
+  }
+  .print-ticks {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .access-main {
+    width: calc(100% - 32px);
+    margin: 20px auto 28px;
+    max-width: 520px;
+  }
+  .access-main > .breadcrumb {
+    margin-bottom: 13px;
+  }
+  .access-card {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding: 7px;
+    border-radius: 15px;
+  }
+  .poster {
+    height: 145px;
+    padding: 17px 19px;
+    justify-content: space-between;
+    border-radius: 9px;
+    background-size: 25px 25px;
+  }
+  .poster-corners > svg,
+  .print-ticks,
+  .poster-copy p,
+  .figure-index {
+    display: none;
+  }
+  .series-chip {
+    font-size: 8px;
+    padding: 4px 8px;
+  }
+  .poster-copy {
+    max-width: 52%;
+  }
+  .poster-copy h2 {
+    font-size: 30px;
+    line-height: 0.96;
+    max-width: 160px;
+    margin: 0 0 3px;
+  }
+  .poster-art {
+    inset: -5% -1% -8% 40%;
+    mask-image: linear-gradient(90deg, transparent, #000 12%, #000);
+  }
+  .poster-art img {
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+  .access-form {
+    padding: 27px 18px 23px;
+    max-width: none;
+  }
+  .access-form h1 {
+    font-size: 36px;
+    margin-top: 10px;
+  }
+  .access-form .intro {
+    font-size: 14px;
+  }
+  .access-form form {
+    margin-top: 24px;
+    gap: 16px;
+  }
+  .access-note {
+    padding: 16px;
+    gap: 10px 12px;
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    margin-top: 12px;
+  }
+  .note-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    align-self: start;
+  }
+  .access-note .text-button {
+    grid-column: 2;
+    margin: 0;
+    justify-self: start;
+    padding: 1px 0;
+  }
+  .access-note p {
+    font-size: 12px;
+  }
+  .secure-caption {
+    margin-top: 15px;
+    font-size: 11px;
+  }
+  .activation .poster {
+    display: none;
+  }
+  .activation .access-form {
+    padding-top: 24px;
+  }
+  .field input,
+  .field textarea,
+  .field select {
+    font-size: 16px;
+  }
+}
+@media (max-width: 360px) {
+  .access-form {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+  .poster-art {
+    left: 43%;
+  }
+  .access-main {
+    width: calc(100% - 20px);
+  }
+}
