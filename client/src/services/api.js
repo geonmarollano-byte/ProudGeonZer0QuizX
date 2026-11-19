@@ -17,7 +17,20 @@ export async function api(path, { method = 'GET', body, signal } = {}) {
     if (e.name === 'AbortError') throw e;
     throw new Error('Could not reach the workspace. Check your connection and try again.');
   }
-  const data = response.status === 204 ? null : await response.json().catch(() => null);
+  if (response.status === 204) return null;
+  // A proxy can serve the SPA/login HTML with status 200 (or its own 401).
+  // Neither is an API response. Never display its body or treat it as a session decision.
+  const [mediaType] = (response.headers.get('Content-Type') || '').split(';');
+  if (mediaType.trim().toLowerCase() !== 'application/json') {
+    throw new Error('The workspace API did not return JSON. Check the service address.');
+  }
+  let data;
+  try {
+    data = await response.json();
+  } catch (e) {
+    if (e.name === 'AbortError') throw e;
+    throw new Error('The workspace API returned invalid JSON.');
+  }
   if (!response.ok) {
     if (response.status === 401 && !['/auth/login', '/auth/me'].includes(path))
       window.dispatchEvent(new Event('session-ended'));
